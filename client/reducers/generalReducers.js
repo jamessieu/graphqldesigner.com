@@ -28,13 +28,17 @@ const generalReducers = (state = initialState, action) => {
     }
 
     case types.HANDLE_SNACKBAR_UPDATE:
-    const newState = Object.assign({}, {open: action.payload.open, message: action.payload.message})
+      const newState = Object.assign({}, {open: action.payload.open, message: action.payload.message})
 
       return {
         ...state,
         message : newState
       }
+    
+    case types.HANDLE_RESET_DATABASE:
+      const resetState = Object.assign({}, initialState);
 
+      return resetState;
 
     default:
       return state;

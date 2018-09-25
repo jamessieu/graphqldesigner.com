@@ -19,8 +19,8 @@ const mapStateToProps = store => ({
 const mapDispatchToProps = dispatch => ({
   exportTable: table => dispatch(actions.exportTable(table)),
   //saveTable: table => dispatch(actions.saveTable(table)) 
-  handleNewProject: () => dispatch(actions.handleNewProject()),
-  chooseDatabase: dbName => dispatch(actions.chooseDatabase(dbName)),
+  handleResetSchema: () => dispatch(actions.handleResetSchema()),
+  handleResetDatabase: () => dispatch(actions.handleResetDatabase())
 });
  
 class MainNav extends React.Component {
@@ -70,8 +70,8 @@ class MainNav extends React.Component {
   }
 
   handleNewProject() {
-    this.props.handleNewProject();
-    return <Welcome chooseDatabase={this.props.chooseDatabase}/>
+    this.props.handleResetSchema();
+    this.props.handleResetDatabase();
   }
 
   

@@ -270,8 +270,8 @@ const reducers = (state = initialState, action) => {
       }
 
                    // ------------ New Project ----------------//
-      // User clicked New Project
-      case types.HANDLE_NEW_PROJECT: 
+      // User clicked New Project, set state to initial state
+      case types.HANDLE_RESET_SCHEMA: 
 
         newState = Object.assign({}, initialState);
         

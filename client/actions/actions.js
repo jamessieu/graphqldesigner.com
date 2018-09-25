@@ -12,6 +12,10 @@ export const handleSnackbarUpdate = (status) => ({
   payload: status,
 })
 
+export const handleResetDatabase = () => ({
+  type: types.HANDLE_RESET_DATABASE
+})
+
 // ----------------------------- Schema App --------------------------------//
 
 export const openTableCreator = () => ({
@@ -72,8 +76,8 @@ export const handleSelectedTable = (tableIndex) => ({
   payload: tableIndex
 })
 
-export const handleNewProject = () => ({
-  type: types.HANDLE_NEW_PROJECT
+export const handleResetSchema = () => ({
+  type: types.HANDLE_RESET_SCHEMA
 })
 
 // ----------------------------- Query App -------------------------------//
