@@ -8,6 +8,7 @@ import './navbar.css';
 
 // componenets
 import GraphqlLoader from '../loader/index.js';
+import Welcome from '../welcome/welcome.js';
 
 
 const mapStateToProps = store => ({
@@ -18,7 +19,8 @@ const mapStateToProps = store => ({
 const mapDispatchToProps = dispatch => ({
   exportTable: table => dispatch(actions.exportTable(table)),
   //saveTable: table => dispatch(actions.saveTable(table)) 
-  handleNewProject: () => dispatch(actions.handleNewProject())
+  handleNewProject: () => dispatch(actions.handleNewProject()),
+  chooseDatabase: dbName => dispatch(actions.chooseDatabase(dbName)),
 });
  
 class MainNav extends React.Component {
@@ -69,6 +71,7 @@ class MainNav extends React.Component {
 
   handleNewProject() {
     this.props.handleNewProject();
+    return <Welcome chooseDatabase={this.props.chooseDatabase}/>
   }
 
   
